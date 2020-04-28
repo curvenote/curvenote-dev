@@ -1,0 +1,29 @@
+{
+  "name": "iooxa-dev",
+  "version": "0.0.1",
+  "description": "Development documentation for https://iooxa.dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy": "cp ../article/dist/iooxa.min.js public/js/iooxa.min.js; cp ../article/dist/iooxa.css public/css/iooxa.css",
+    "serve": "firebase serve",
+    "build": "node src/index.js",
+    "deploy": "firebase deploy --only 'hosting'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iooxa/iooxa-dev.git"
+  },
+  "author": "Rowan Cockett",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iooxa/iooxa-dev/issues"
+  },
+  "homepage": "https://github.com/iooxa/iooxa-dev#readme",
+  "dependencies": {
+    "@iooxa/components": "^0.2.4",
+    "esm": "^3.2.25",
+    "jsdom": "^16.2.2",
+    "nunjucks": "^3.2.1"
+  }
+}

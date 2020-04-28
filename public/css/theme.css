@@ -1,0 +1,23 @@
+body {
+  --ink-font: "Roboto", sans-serif;
+  --ink-font-headers: "Noto Sans", serif;
+  --mdc-theme-primary: #ee9127;
+  --mdc-theme-secondary: #46f;
+}
+
+nav {
+  position: fixed;
+  top: 153px;
+  left: calc(50vw - 420px - 330px);
+}
+
+nav > ul {
+  max-height: calc(100vh - 153px - 2em);
+  overflow-y: scroll;
+}
+
+nav.centered {
+  position: fixed;
+  top: 153px;
+  left: calc(50vw - 420px - 200px);
+}
