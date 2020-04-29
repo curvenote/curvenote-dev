@@ -1,7 +1,4 @@
 {% extends "layout/article.tpl" %}
-{% block preArticle %}
-{% include 'partials/nav.tpl' %}
-{% endblock %}
 {% block article %}
 <r-var name="r" value="0.35"></r-var>
 <r-var name="points" value="5"></r-var>

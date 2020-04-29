@@ -1,9 +1,5 @@
 {% extends "layout/article.tpl" %}
-{% block preArticle %}
-{% include 'partials/nav.tpl' %}
-{% endblock %}
 {% block article %}
-{% include 'partials/logo.tpl' %}
 <h1>@iooxa/article</h1>
 <r-outline class="popout"></r-outline>
 <h2>Introduction</h2>
@@ -53,22 +49,19 @@
 </r-code>
 
 <h2>Layout</h2>
-<r-card title="Aside - r-aside" description="Write in the margins" img-src="/images/article/aside.png"
-  url="/article/aside" width="46%" contain></r-card>
-<r-card title="Callout - r-callout" description="Call things out" img-src="/images/article/callout.png"
-  url="/article/callout" width="46%" contain></r-card>
-<r-card title="Quote - r-quote" description="Quotes are wonderful" img-src="/images/article/quote.png"
-  url="/article/quote" width="46%" contain></r-card>
-<r-card title="Outline - r-outline" description="Make sure you know where you are" img-src="/images/article/outline.gif"
-  url="/article/outline" width="46%" contain></r-card>
+<div class="card-container">
+  <r-card title="Aside - r-aside" description="Write in the margins" img-src="/images/article/aside.png" url="/article/aside" width="46%" contain></r-card>
+  <r-card title="Callout - r-callout" description="Call things out" img-src="/images/article/callout.png" url="/article/callout" width="46%" contain></r-card>
+  <r-card title="Quote - r-quote" description="Quotes are wonderful" img-src="/images/article/quote.png" url="/article/quote" width="46%" contain></r-card>
+  <r-card title="Outline - r-outline" description="Make sure you know where you are" img-src="/images/article/outline.gif" url="/article/outline" width="46%" contain></r-card>
+</div>
 
 <h2>Article Components</h2>
-<r-card title="Equation - r-equation" description="Equations are fun" img-src="/images/article/equation.png"
-  url="/article/equation" width="46%" contain></r-card>
-<r-card title="Code - r-code" description="Equations are fun" img-src="/images/article/code.png" url="/article/code"
-  width="46%"></r-card>
-<r-card title="Demo - r-demo" description="Equations are fun" img-src="/images/article/demo.png" url="/article/demo"
-  width="46%" contain></r-card>
+<div class="card-container">
+  <r-card title="Equation - r-equation" description="Equations are fun" img-src="/images/article/equation.png" url="/article/equation" width="46%" contain></r-card>
+  <r-card title="Code - r-code" description="Equations are fun" img-src="/images/article/code.png" url="/article/code" width="46%"></r-card>
+  <r-card title="Demo - r-demo" description="Equations are fun" img-src="/images/article/demo.png" url="/article/demo" width="46%" contain></r-card>
+</div>
 
 
 {% endblock%}

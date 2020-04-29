@@ -1,9 +1,5 @@
 {% extends "layout/article.tpl" %}
-{% block preArticle %}
-{% include 'partials/nav.tpl' %}
-{% endblock %}
 {% block article %}
-{% include 'partials/logo.tpl' %}
 <h1>Callout</h1>
 <r-demo>
   <aside class="callout">A default callout!</aside>

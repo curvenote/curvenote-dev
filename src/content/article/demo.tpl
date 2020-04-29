@@ -1,9 +1,5 @@
 {% extends "layout/article.tpl" %}
-{% block preArticle %}
-{% include 'partials/nav.tpl' %}
-{% endblock %}
 {% block article %}
-{% include 'partials/logo.tpl' %}
 <h1>Demo</h1>
 <p>
   The <code>r-demo</code> component allows you to write html, and then show the <code>innerHTML</code> as code below it.

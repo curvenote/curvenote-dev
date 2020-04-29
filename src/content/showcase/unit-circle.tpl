@@ -1,7 +1,4 @@
 {% extends "layout/article.tpl" %}
-{% block preArticle %}
-{% include 'partials/nav.tpl' %}
-{% endblock %}
 {% block article %}
 <r-var name="r" value="0.35"></r-var>
 <r-var name="theta" value="0" format=".1f"></r-var>

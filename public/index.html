@@ -8,7 +8,7 @@
   <meta charset="utf-8" />
   <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#2F2F2F" />
+  <meta name="theme-color" content="#EE9127" />
 
   <meta name="description" content="iooxa.dev: open source tools to promote and enable interactive scientific writing and explorable explanations" />
 
@@ -30,8 +30,8 @@
   <meta property="og:description" content="iooxa.dev: open source tools to promote and enable interactive scientific writing and explorable explanations" />
   <meta property="og:site_name" content="iooxa.dev" />
 
-  <meta property="article:published_time" content="2020-04-28T16:30:41.123Z" />
-  <meta property="article:modified_time" content="2020-04-28T16:30:41.123Z" />
+  <meta property="article:published_time" content="2020-04-29T18:36:54.871Z" />
+  <meta property="article:modified_time" content="2020-04-29T18:36:54.871Z" />
   <link rel="stylesheet" href="/css/iooxa.css">
   <link rel="stylesheet" href="/css/theme.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap">
@@ -46,7 +46,7 @@
   </script>
 </head>
 <body>
-<nav class="centered">
+<nav class="popout centered">
   <div>Documentation</div>
   <ul>
     <li><a class="selected">iooxa.dev</a></li>
@@ -101,7 +101,13 @@
   </ul>
 </nav>
 <article class="centered">
-<p style="margin: 30px calc(50% - 75px);"><a href="/"><img src="/images/logo.png" width="150"></a></p>
+<p style="margin: 30px calc(50% - 75px);"><a href="/"><img src="/images/logo.png" alt="iooxa.dev - logo" width="150"></a></p>
+<p style="text-align:right">
+  <a href="https://www.npmjs.com/package/@iooxa/article" target="_blank" rel="nofollow"><img alt="NPM Version" src="https://img.shields.io/npm/v/@iooxa/article.svg"></a>
+  <a href="https://github.com/iooxa/article/blob/master/LICENSE" target="_blank" rel="nofollow"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <a href="https://github.com/iooxa/article" target="_blank" rel="nofollow"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/iooxa/article?label=Star%20on%20GitHub&style=social"></a>
+  <a href="https://twitter.com/intent/follow?screen_name=_iooxa" target="_blank"><img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/_iooxa?style=social"></a>
+</p>
 <h1>iooxa.dev</h1>
 <r-outline class="popout"></r-outline>
 <p>
@@ -116,11 +122,12 @@
   <p>
     Our work is inspired by <a href="http://worrydream.com/Tangle/guide.html" target="_blank">tangle.js</a>
     and <a href="https://explorabl.es/" target="_blank">explorable explanations</a>.
-    The <code>@iooxa/components</code> package expose reactive web-components so you can declaratively write
+    <code>@iooxa/article</code> exposes reactive web-components so you can declaratively write
     your variables and how to display them in <code>html</code> markup.
     To get an idea of what that looks like, let's take the canonical example of <em>Tangled Cookies</em> - a simple
     reactive document to encourage you to not eat more than
     <r-action :click="{'demo1.cookies':42, 'demo2.cookies':42, simple:false}">42 cookies</r-action> in one day.
+    <br>
     <em>Try dragging
       <r-dynamic :value="$variables[simple?'demo1':'demo2'].cookies" :change="{'demo1.cookies':value, 'demo2.cookies':value}" min="2" max="100" after=" cookies" format=".4"></r-dynamic>
       to the left or right!
@@ -162,14 +169,8 @@
 
 <hr>
 
-<aside class="callout">
-  <p>
-    See our <a href="/showcase">showcase</a> for using <code>@iooxa/components</code>!
-  </p>
-</aside>
-
 <h2>Components and Documentation</h2>
-<div>
+<div class="card-container">
   <r-card title="Introduction" description="Learn how to get started" img-src="/images/article/callout.png" url="/introduction" contain></r-card>
   <r-card title="Components" description="Sliders, equations, charts, oh-my" img-src="/images/components/button.gif" url="/components" contain></r-card>
   <r-card title="Article" description="Equations, layout and more" img-src="/images/components/visible.gif" url="/article" contain></r-card>
@@ -180,13 +181,19 @@
 
 <hr>
 
+<a href="https://jsbin.com/qulahusifa/5/edit?html,output" target="_blank" style="float:right;text-decoration: none;"><r-button outlined dense label="Edit Now"></r-button></a>
 <h1>Getting Started</h1>
 
-<p>The easiest way to get started is to put the javascript bundle directly to your page:</p>
+<p>The easiest way to get started is to put the Javascript bundle and the stylesheet directly to your page:</p>
 <r-code compact copy>
   &lt;link rel="stylesheet" href="https://unpkg.com/@iooxa/article/dist/iooxa.css"&gt;
   &lt;script async src="https://unpkg.com/@iooxa/article"&gt;&lt;/script&gt;
 </r-code>
+
+<aside class="callout success">
+<p>Try editing an <a href="https://jsbin.com/qulahusifa/5/edit?html,output" target="_blank">article on jsbin</a> without leaving your browser!</p>
+</aside>
+
 <p>
   You can also download the <a href="https://github.com/iooxa/article/releases"
     target="_blank">latest release</a> from GitHub.
@@ -195,13 +202,22 @@
   You can also install from npm:
 </p>
 <r-code compact copy language="bash">
-  npm install @iooxa/article
+  npm install @iooxa/article @iooxa/components @iooxa/svg @iooxa/runtime
 </r-code>
 
-<p>You should then be able to extend ink as you see fit:</p>
+<p>You should then be able to extend the package as you see fit:</p>
 <r-code compact copy language="javascript">
   import components from '@iooxa/article';
 </r-code>
+
+<p>
+  See <a href="https://github.com/iooxa" target="_blank">iooxa on GitHub</a> for more information about the libraries.
+</p>
+<hr>
+<a href="/introduction" style="text-decoration: none; float: right;">
+  <r-button outlined label="Introduction >"></r-button>
+</a>
+<p style="clear:both; text-align: center; color: #AAA; padding-top: 50px;">Made with love by <a href="https://iooxa.com" style="color: #AAA;"><img src="/images/icon.png" style="height: 1em;"> iooxa</a></p>
 </article>
 </body>
 </html>

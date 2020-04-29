@@ -1,9 +1,5 @@
 {% extends "layout/article.tpl" %}
-{% block preArticle %}
-{% include 'partials/nav.tpl' %}
-{% endblock %}
 {% block article %}
-{% include 'partials/logo.tpl' %}
 <h1>iooxa.dev</h1>
 <r-outline class="popout"></r-outline>
 <p>
@@ -18,11 +14,12 @@
   <p>
     Our work is inspired by <a href="http://worrydream.com/Tangle/guide.html" target="_blank">tangle.js</a>
     and <a href="https://explorabl.es/" target="_blank">explorable explanations</a>.
-    The <code>@iooxa/components</code> package expose reactive web-components so you can declaratively write
+    <code>@iooxa/article</code> exposes reactive web-components so you can declaratively write
     your variables and how to display them in <code>html</code> markup.
     To get an idea of what that looks like, let's take the canonical example of <em>Tangled Cookies</em> - a simple
     reactive document to encourage you to not eat more than
     <r-action :click="{'demo1.cookies':42, 'demo2.cookies':42, simple:false}">42 cookies</r-action> in one day.
+    <br>
     <em>Try dragging
       <r-dynamic :value="$variables[simple?'demo1':'demo2'].cookies" :change="{'demo1.cookies':value, 'demo2.cookies':value}" min="2" max="100" after=" cookies" format=".4"></r-dynamic>
       to the left or right!
@@ -64,14 +61,8 @@
 
 <hr>
 
-<aside class="callout">
-  <p>
-    See our <a href="/showcase">showcase</a> for using <code>@iooxa/components</code>!
-  </p>
-</aside>
-
 <h2>Components and Documentation</h2>
-<div>
+<div class="card-container">
   <r-card title="Introduction" description="Learn how to get started" img-src="/images/article/callout.png" url="/introduction" contain></r-card>
   <r-card title="Components" description="Sliders, equations, charts, oh-my" img-src="/images/components/button.gif" url="/components" contain></r-card>
   <r-card title="Article" description="Equations, layout and more" img-src="/images/components/visible.gif" url="/article" contain></r-card>

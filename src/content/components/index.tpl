@@ -1,9 +1,5 @@
 {% extends "layout/article.tpl" %}
-{% block preArticle %}
-{% include 'partials/nav.tpl' %}
-{% endblock %}
 {% block article %}
-{% include 'partials/logo.tpl' %}
 <h1>@iooxa/components</h1>
 <r-outline class="popout"></r-outline>
 <h2>Introduction</h2>
@@ -295,12 +291,5 @@
   That's it for an overview of using <code>@iooxa/components</code>, next up, is
   seeing the components that you have available to you out of the box!
 </p>
-
-<a href="/article" style="text-decoration: none; float: left;">
-  <r-button outlined label="< article"></r-button>
-</a>
-<a href="/components/overview" style="text-decoration: none; float: right;">
-  <r-button outlined label="overview of components >"></r-button>
-</a>
 
 {% endblock%}

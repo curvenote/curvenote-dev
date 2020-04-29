@@ -1,7 +1,4 @@
 {% extends "layout/article.tpl" %}
-{% block preArticle %}
-{% include 'partials/nav.tpl' %}
-{% endblock %}
 {% block article %}
 <h1>Taylor Series</h1>
 <p>

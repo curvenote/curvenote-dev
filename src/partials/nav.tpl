@@ -1,4 +1,4 @@
-<nav{{ ' class="centered"' | safe if page.centered }}>
+<nav class="popout{{ ' centered' | safe if page.centered }}">
   <div>{{ nav.label }}</div>
   <ul>
 {% for item in nav.children %}

@@ -1,9 +1,5 @@
 {% extends "layout/article.tpl" %}
-{% block preArticle %}
-{% include 'partials/nav.tpl' %}
-{% endblock %}
 {% block article %}
-{% include 'partials/logo.tpl' %}
 <h1>Dynamic</h1>
 {% include 'partials/spec.tpl' %}
 <r-var name="x" value="2"></r-var>

@@ -1,7 +1,7 @@
 {% extends "layout/article.tpl" %}
 {% block preArticle %}
 {% include 'partials/nav.tpl' %}
-{% endblock %}
+{% endblock%}
 {% block article %}
 <r-var name="a" value="1"></r-var>
 <r-var name="b" value="1"></r-var>
@@ -15,7 +15,7 @@
 <p>
   How do you <r-action :click="{cartesian: !cartesian}">change</r-action> from a <r-action :click="{cartesian: false}">radial</r-action> coordinate system to <r-action :click="{cartesian: true}">Cartesian</r-action> coordinate system?!
 </p>
-<r-svg-chart style="float:right" xlim="[-5, 5]" ylim="[-5, 5]" height="300" width="300" x-axis-location="origin"
+<r-svg-chart xlim="[-5, 5]" ylim="[-5, 5]" height="300" width="300" x-axis-location="origin"
   y-axis-location="origin">
   <r-svg-path :visible="cartesian" :data="[[a,0], [a, b]]" :hover="{showX: true}" :stroke="showX ? 'red' : '#333'" strokeWidth="1.5"></r-svg-path>
   <r-svg-path :visible="cartesian" :data="[[a, b], [0,b]]" :hover="{showX: false}" :stroke="!showX ? 'red' : '#333'" strokeWidth="1.5"></r-svg-path>

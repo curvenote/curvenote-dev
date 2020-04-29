@@ -1,9 +1,5 @@
 {% extends "layout/article.tpl" %}
-{% block preArticle %}
-{% include 'partials/nav.tpl' %}
-{% endblock %}
 {% block article %}
-{% include 'partials/logo.tpl' %}
 <h1>Introduction</h1>
 <r-outline class="popout"></r-outline>
 <!-- IOOXA https://api.iooxa.com/blocks/CgfG3BXYMgMzS5Dzook2/xiNiWaRH0ogcRY4pSQIT -->
@@ -100,8 +96,8 @@
     <r-svg-eqn eqn="[-Math.cos(t)*xC, -Math.sin(t)*xC]" parameterize="t" :domain="[Math.PI, Math.PI*1.5]"
       stroke="blue" :stroke-width="wB"></r-svg-eqn>
     <!-- Text labels -->
-    <r-svg-text text="sin(&theta;)" x="1.75" :y=" 0.43-r" fill="red"></r-svg-text>
-    <r-svg-text text="cos(&theta;)" x="1.75" :y="-0.57-r" fill="blue"></r-svg-text>
+    <r-svg-text text="sin(&theta;)" x="1.6" :y=" 0.43-r" fill="red"></r-svg-text>
+    <r-svg-text text="cos(&theta;)" x="1.6" :y="-0.57-r" fill="blue"></r-svg-text>
     <!-- Origin, radius and angle: default is hidden -->
     <r-svg-circle x="-0.5" y="0.5" :visible="sOrigin" fill="#333"></r-svg-circle>
     <r-svg-path :data="[[-0.5, 0.5], [xC,yC]]" :visible="sRadius" stroke="#333" stroke-width="3"></r-svg-path>
@@ -165,7 +161,7 @@
   <aside>
     <p>
       We know this is still a little hard, which is why we are working on an editor to make writing very easy!!
-      <img src="/images/var-editor.gif" style="border: 1px solid #333;">
+      <img src="/images/var-editor.gif" style="border: 1px solid #333;"><br>
       Sign up for our <a href="https://eepurl.com/gSTYyv" target="_blank">mailing list</a> to learn more!
     </p>
   </aside>

@@ -1,7 +1,4 @@
 {% extends "layout/article.tpl" %}
-{% block preArticle %}
-{% include 'partials/nav.tpl' %}
-{% endblock %}
 {% block article %}
 <h1>Snell's Law</h1>
 <h2>Angles Of Reflection And Refraction</h2>

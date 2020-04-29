@@ -1,7 +1,4 @@
 {% extends "layout/article.tpl" %}
-{% block preArticle %}
-{% include 'partials/nav.tpl' %}
-{% endblock %}
 {% block article %}
 <h1>ArcTan2</h1>
 <r-var name="a" value="-3"></r-var>

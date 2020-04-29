@@ -22,6 +22,7 @@ const site = {
   name: 'iooxa.dev',
   twitter: '@_iooxa',
   googleAnalyticsKey: 'G-4P4Z3X7QKB',
+  theme: '#EE9127',
 }
 
 const nav = {
@@ -89,7 +90,31 @@ function writePage(page, data = {}) {
     }
     return { ...item, selected: item.url === page.url };
   }) }
-  const indexHTML = nunjucks.render(page.tpl, { site, nav: pageNav, page, ...data });
+
+  const links = {};
+
+  nav.children.forEach((item, i) => {
+    if (item.url === page.url) {
+      links.prev = nav.children[i - 1];
+      links.next = nav.children[i + 1];
+    }
+    if (item.type === 'section') {
+      item.children.forEach((subitem, j) => {
+        if (subitem.url === page.url) {
+          links.prev = item.children[j - 1] ? item.children[j - 1] : nav.children[i - 1];
+          links.next = item.children[j + 1] ? item.children[j + 1] : nav.children[i + 1];
+        }
+      });
+    }
+  });
+  if (links.prev && links.prev.type === 'section') {
+    links.prev = { url: links.prev.children[0].url, label: links.prev.label };
+  }
+  if (links.next && links.next.type === 'section') {
+    links.next = { url: links.next.children[0].url, label: links.next.label };
+  }
+
+  const indexHTML = nunjucks.render(page.tpl, { site, nav: pageNav, page, links, ...data });
 
   const loc = path.join(__dirname, '..', 'public', page.file);
 

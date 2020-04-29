@@ -8,9 +8,15 @@
 {% include 'partials/meta.tpl' %}
 {% endblock %}
 {% block body %}
-{% block preArticle %}{% endblock %}
+{% block preArticle %}
+{% include 'partials/nav.tpl' %}
+{% endblock %}
 <article{{ ' class="centered"' | safe if page.centered }}>
+{% include 'partials/logo.tpl' %}
 {% block article %}{% endblock %}
+<hr>
+{% include 'partials/bottom_links.tpl' %}
 </article>
-{% block postArticle %}{% endblock %}
+{% block postArticle %}
+{% endblock %}
 {% endblock %}
