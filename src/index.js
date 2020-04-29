@@ -20,9 +20,12 @@ const env = nunjucks.configure('src', { trimBlocks: true });
 const site = {
   url: 'https://iooxa.dev',
   name: 'iooxa.dev',
-  twitter: '@_iooxa',
+  twitter: '_iooxa',
+  github: 'iooxa',
   googleAnalyticsKey: 'G-4P4Z3X7QKB',
   theme: '#EE9127',
+  logo: '/images/logo.png',
+  icon: '/images/icon.png',
 }
 
 const nav = {
@@ -137,13 +140,20 @@ const basePage = {
   date: new Date().toISOString(),
 };
 
+
+writePage({
+  url: '/',
+  tpl: 'content/404.tpl',
+  file: '404.html',
+});
+
 writePage({
   url: '/',
   tpl: 'content/index.tpl',
   file: 'index.html',
   title: 'Interactive Scientific Writing',
   description: 'iooxa.dev: open source tools to promote and enable interactive scientific writing and explorable explanations',
-  thumbnail: '/images/logo.png',
+  thumbnail: '/images/tangle.png',
   ...basePage,
   centered: true,
 });
@@ -153,8 +163,8 @@ writePage({
   tpl: 'content/introduction.tpl',
   file: 'introduction.html',
   title: 'Introduction',
-  description: 'Create beautiful reactive documents and explorable explanations using iooxa',
-  thumbnail: '/images/logo.png',
+  description: 'Create beautiful reactive documents and explorable explanations using @iooxa/article',
+  thumbnail: '/images/tangle.png',
   ...basePage,
 });
 
@@ -163,8 +173,8 @@ writePage({
   tpl: 'content/getting-started.tpl',
   file: 'getting-started.html',
   title: 'Getting Started',
-  description: 'Including scripts and installing from node',
-  thumbnail: '/images/logo.png',
+  description: 'Including scripts in your HTML and installing from node',
+  thumbnail: '/images/getting-started.png',
   ...basePage,
   centered: true,
 });
@@ -175,7 +185,7 @@ writePage({
   file: 'components/index.html',
   title: '@iooxa/components',
   description: 'Use @iooxa/components to build explorable explanations',
-  thumbnail: '/images/logo.png',
+  thumbnail: '/images/components.gif',
   ...basePage,
 });
 
@@ -184,19 +194,21 @@ writePage({
   tpl: 'content/components/overview.tpl',
   file: 'components/overview.html',
   title: 'Component Overview',
-  description: 'Visual overview of components',
-  thumbnail: '/images/logo.png',
+  description: 'Visual overview of @iooxa/components',
+  thumbnail: '/images/components.gif',
   ...basePage,
   centered: true,
 });
+
+
 { // Components
   writePage({
     url: '/components/variable',
     tpl: 'content/components/variable.tpl',
     file: 'components/variable.html',
     title: 'Variable',
-    description: 'Visual variable of components',
-    thumbnail: '/images/var.png',
+    description: 'Use r-var as a web-component to create variables',
+    thumbnail: '/images/components/var.png',
     ...basePage,
     centered: true,
   }, { spec: convertSpec(components.Variable) });
@@ -207,8 +219,8 @@ writePage({
     tpl: 'content/components/display.tpl',
     file: 'components/display.html',
     title: 'display',
-    description: 'Visual display of components',
-    thumbnail: '/images/display.gif',
+    description: 'Use r-display as a web-component to display variables',
+    thumbnail: '/images/components/display.gif',
     ...basePage,
     centered: true,
   }, { spec: convertSpec(components.Display) });
@@ -219,8 +231,8 @@ writePage({
     tpl: 'content/components/dynamic.tpl',
     file: 'components/dynamic.html',
     title: 'dynamic',
-    description: 'Visual dynamic of components',
-    thumbnail: '/images/dynamic.gif',
+    description: 'Use r-dynamic as a web-component to show dynamic text',
+    thumbnail: '/images/components/dynamic.gif',
     ...basePage,
     centered: true,
   }, { spec: convertSpec(components.Dynamic) });
@@ -231,8 +243,8 @@ writePage({
     tpl: 'content/components/range.tpl',
     file: 'components/range.html',
     title: 'range',
-    description: 'Visual range of components',
-    thumbnail: '/images/range.gif',
+    description: 'Use r-range as a web-component to interact with a slider',
+    thumbnail: '/images/components/range.gif',
     ...basePage,
     centered: true,
   }, { spec: convertSpec(components.Range) });
@@ -243,8 +255,8 @@ writePage({
     tpl: 'content/components/action.tpl',
     file: 'components/action.html',
     title: 'action',
-    description: 'Visual action of components',
-    thumbnail: '/images/action.gif',
+    description: 'Use r-action as a web-component to click on inline links',
+    thumbnail: '/images/components/action.gif',
     ...basePage,
     centered: true,
   }, { spec: convertSpec(components.Action) });
@@ -255,8 +267,8 @@ writePage({
     tpl: 'content/components/button.tpl',
     file: 'components/button.html',
     title: 'button',
-    description: 'Visual button of components',
-    thumbnail: '/images/button.gif',
+    description: 'Use r-button as a web-component to click on buttons',
+    thumbnail: '/images/components/button.gif',
     ...basePage,
     centered: true,
   }, { spec: convertSpec(components.Button) });
@@ -267,8 +279,8 @@ writePage({
     tpl: 'content/components/switch.tpl',
     file: 'components/switch.html',
     title: 'switch',
-    description: 'Visual switch of components',
-    thumbnail: '/images/switch.gif',
+    description: 'Use r-switch as a web-component to create a switch',
+    thumbnail: '/images/components/switch.gif',
     ...basePage,
     centered: true,
   }, { spec: convertSpec(components.Switch) });
@@ -279,8 +291,8 @@ writePage({
     tpl: 'content/components/checkbox.tpl',
     file: 'components/checkbox.html',
     title: 'checkbox',
-    description: 'Visual checkbox of components',
-    thumbnail: '/images/checkbox.gif',
+    description: 'Use r-checkbox as a web-component to create a checkbox',
+    thumbnail: '/images/components/checkbox.gif',
     ...basePage,
     centered: true,
   }, { spec: convertSpec(components.Checkbox) });
@@ -291,8 +303,8 @@ writePage({
     tpl: 'content/components/radio.tpl',
     file: 'components/radio.html',
     title: 'radio',
-    description: 'Visual radio of components',
-    thumbnail: '/images/radio.gif',
+    description: 'Use r-radio as a web-component to create radio buttons',
+    thumbnail: '/images/components/radio.gif',
     ...basePage,
     centered: true,
   }, { spec: convertSpec(components.Radio) });
@@ -303,8 +315,8 @@ writePage({
     tpl: 'content/components/select.tpl',
     file: 'components/select.html',
     title: 'select',
-    description: 'Visual select of components',
-    thumbnail: '/images/select.gif',
+    description: 'Use r-select as a web-component to create a dropdown selector',
+    thumbnail: '/images/components/select.gif',
     ...basePage,
     centered: true,
   }, { spec: convertSpec(components.Select) });
@@ -315,8 +327,8 @@ writePage({
     tpl: 'content/components/input.tpl',
     file: 'components/input.html',
     title: 'input',
-    description: 'Visual input of components',
-    thumbnail: '/images/input.gif',
+    description: 'Use r-input as a web-component to get user input',
+    thumbnail: '/images/components/input.gif',
     ...basePage,
     centered: true,
   }, { spec: convertSpec(components.Input) });
@@ -327,8 +339,8 @@ writePage({
     tpl: 'content/components/visible.tpl',
     file: 'components/visible.html',
     title: 'visible',
-    description: 'Visual visible of components',
-    thumbnail: '/images/visible.gif',
+    description: 'Use r-visible as a web-component to show or hide content reactively',
+    thumbnail: '/images/components/visible.gif',
     ...basePage,
     centered: true,
   }, { spec: convertSpec(components.Visible) });
@@ -342,7 +354,7 @@ writePage({
     file: 'article/index.html',
     title: '@iooxa/article',
     description: 'Use @iooxa/article to build explorable explanations',
-    thumbnail: '/images/logo.png',
+    thumbnail: '/images/components/visible.gif',
     ...basePage,
   });
 
@@ -350,8 +362,8 @@ writePage({
     url: '/article/aside',
     tpl: 'content/article/aside.tpl',
     file: 'article/aside.html',
-    title: 'Article Visual Overview',
-    description: 'Visual aside of article components',
+    title: '@iooxa/article Visual Overview',
+    description: 'Visual aside of article components and layout',
     thumbnail: '/images/article/aside.png',
     ...basePage,
     centered: true,
@@ -360,8 +372,8 @@ writePage({
     url: '/article/callout',
     tpl: 'content/article/callout.tpl',
     file: 'article/callout.html',
-    title: 'Article Visual Overview',
-    description: 'Visual callout of article components',
+    title: 'Callout',
+    description: 'CSS for a callout text-block',
     thumbnail: '/images/article/callout.png',
     ...basePage,
     centered: true,
@@ -370,8 +382,8 @@ writePage({
     url: '/article/quote',
     tpl: 'content/article/quote.tpl',
     file: 'article/quote.html',
-    title: 'Article Visual Overview',
-    description: 'Visual quote of article components',
+    title: 'Quote',
+    description: 'CSS for a callout text-block',
     thumbnail: '/images/article/quote.png',
     ...basePage,
     centered: true,
@@ -380,8 +392,8 @@ writePage({
     url: '/article/equation',
     tpl: 'content/article/equation.tpl',
     file: 'article/equation.html',
-    title: 'Article Visual Overview',
-    description: 'Visual equation of article components',
+    title: 'Equation',
+    description: 'Create a katex equation web-component',
     thumbnail: '/images/article/equation.png',
     ...basePage,
   });
@@ -389,8 +401,8 @@ writePage({
     url: '/article/code',
     tpl: 'content/article/code.tpl',
     file: 'article/code.html',
-    title: 'Article Visual Overview',
-    description: 'Visual code of article components',
+    title: 'Code',
+    description: 'Show code with highlight.js',
     thumbnail: '/images/article/code.png',
     ...basePage,
     centered: true,
@@ -399,8 +411,8 @@ writePage({
     url: '/article/demo',
     tpl: 'content/article/demo.tpl',
     file: 'article/demo.html',
-    title: 'Article Visual Overview',
-    description: 'Visual demo of article components',
+    title: 'Demo',
+    description: 'Create an HTML demo automatically',
     thumbnail: '/images/article/demo.png',
     ...basePage,
     centered: true,
@@ -409,8 +421,8 @@ writePage({
     url: '/article/outline',
     tpl: 'content/article/outline.tpl',
     file: 'article/outline.html',
-    title: 'Article Visual Overview',
-    description: 'Visual outline of article components',
+    title: 'Outline',
+    description: 'Show a visual outline of your article',
     thumbnail: '/images/article/outline.gif',
     ...basePage,
     centered: true,
@@ -424,7 +436,7 @@ writePage({
   file: 'svg/index.html',
   title: '@iooxa/svg',
   description: 'Create diagrams and reactive svgs in iooxa',
-  thumbnail: '/images/logo.png',
+  thumbnail: '/images/svg/radius.png',
   ...basePage,
   centered: true,
 });
@@ -436,7 +448,7 @@ writePage({
   file: 'runtime/index.html',
   title: '@iooxa/runtime',
   description: 'Introduction to the @iooxa/runtime package',
-  thumbnail: '/images/logo.png',
+  thumbnail: '/images/tangle.png',
   ...basePage,
   centered: true,
 });
