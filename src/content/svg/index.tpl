@@ -151,102 +151,101 @@
   <r-demo>
     <r-var name="amplitude" value="0.4"></r-var>
     <p style="text-align: center;">
-        <r-svg-chart :xlim="[-5, 5]" ylim="[-5, 5]" width="400" height="400" x-axis-location="origin" y-axis-location="origin">
-            <r-svg-eqn eqn="amplitude * Math.sin(x)" :listen="amplitude"></r-svg-eqn>
-            <r-svg-eqn eqn="amplitude * Math.sin(y)" parameterize="y"></r-svg-eqn>
-            <r-svg-eqn eqn="[amplitude*t * Math.cos(t), amplitude*t * Math.sin(t)]" parameterize="t" :domain="[0,Math.PI*16]"></r-svg-eqn>
-        </r-svg-chart>
-        <strong>Amplitude:</strong><r-range bind="amplitude" min="-5" max="5" step="0.05"></r-range><br>
+      <r-svg-chart :xlim="[-5, 5]" ylim="[-5, 5]" width="400" height="400" x-axis-location="origin" y-axis-location="origin">
+        <r-svg-eqn eqn="amplitude * Math.sin(x)" :listen="amplitude"></r-svg-eqn>
+        <r-svg-eqn eqn="amplitude * Math.sin(y)" parameterize="y"></r-svg-eqn>
+        <r-svg-eqn eqn="[amplitude*t * Math.cos(t), amplitude*t * Math.sin(t)]" parameterize="t" :domain="[0,Math.PI*16]"></r-svg-eqn>
+      </r-svg-chart>
+      <strong>Amplitude:</strong><r-range bind="amplitude" min="-5" max="5" step="0.05"></r-range><br>
     </p>
   </r-demo>
 
   <aside class="callout danger">
-      <p>
-        <strong>Note:</strong> You ocasionally have to <code>:listen</code> for changes in the <code>r-svg-eqn</code> component,
-        as the eqn attribute is a string and does not trigger updates to the chart. The <code>:listen</code> attribute can be a
-        single value, or an array of values to listen to and re-draw the chart.
-      </p>
+    <p>
+      <strong>Note:</strong> You ocasionally have to <code>:listen</code> for changes in the <code>r-svg-eqn</code> component,
+      as the eqn attribute is a string and does not trigger updates to the chart. The <code>:listen</code> attribute can be a
+      single value, or an array of values to listen to and re-draw the chart.
+    </p>
   </aside>
 </r-scope>
 
 
 <r-scope name="phase">
-    <h2>Example - Sin Wave</h2>
+  <h2>Example - Sin Wave</h2>
 
-    <r-var name="amplitude" value="1"></r-var>
-    <r-var name="freq" value="1"></r-var>
-    <r-var name="phase" value="0"></r-var>
+  <r-var name="amplitude" value="1"></r-var>
+  <r-var name="freq" value="1"></r-var>
+  <r-var name="phase" value="0"></r-var>
 
-    <strong>Amplitude, $A$:</strong><r-dynamic bind="amplitude" min="-3" max="3" step="0.25"></r-dynamic><br>
-    <strong>Frequency, $f$:</strong><r-dynamic bind="freq" min="0" max="6.28" step="0.2"></r-dynamic><br>
-    <strong>Phase, $\varphi$:</strong><r-dynamic bind="phase" min="0" :max="freq * ((Math.PI * 2) ** 2)" step="0.25"></r-dynamic><br>
+  <strong>Amplitude, $A$:</strong><r-dynamic bind="amplitude" min="-3" max="3" step="0.25"></r-dynamic><br>
+  <strong>Frequency, $f$:</strong><r-dynamic bind="freq" min="0" max="6.28" step="0.2"></r-dynamic><br>
+  <strong>Phase, $\varphi$:</strong><r-dynamic bind="phase" min="0" :max="freq * ((Math.PI * 2) ** 2)" step="0.25"></r-dynamic><br>
 
-    <r-equation>
-        y(t) = A \cos(2 \pi f t - \varphi)
-    </r-equation>
+  <r-equation>
+    y(t) = A \cos(2 \pi f t - \varphi)
+  </r-equation>
 
-    <r-svg-chart :xlim="[0, 2 * Math.PI]" ylim="[-3, 3]" xlabel="t" ylabel="y(t)">
-        <r-svg-eqn eqn="amplitude * Math.cos(2 * Math.PI * freq * x - phase)"></r-svg-eqn>
-        <r-svg-node :x="phase / (2 * Math.PI * freq)" :y="amplitude" :drag="{amplitude: y, phase: 2 * Math.PI * freq * x}"></r-svg-node>
-    </r-svg-chart>
+  <r-svg-chart :xlim="[0, 2 * Math.PI]" ylim="[-3, 3]" xlabel="t" ylabel="y(t)">
+    <r-svg-eqn eqn="amplitude * Math.cos(2 * Math.PI * freq * x - phase)"></r-svg-eqn>
+    <r-svg-node :x="phase / (2 * Math.PI * freq)" :y="amplitude" :drag="{amplitude: y, phase: 2 * Math.PI * freq * x}"></r-svg-node>
+  </r-svg-chart>
 </r-scope>
 
 <r-scope name="dragOffset">
-    <h2>Example - Drag Nodes</h2>
+  <h2>Example - Drag Nodes</h2>
 
-    <r-var name="a" value="0.5"></r-var>
-    <r-var name="b" value="0.5"></r-var>
+  <r-var name="a" value="0.5"></r-var>
+  <r-var name="b" value="0.5"></r-var>
 
-    <r-var name="off_x" value="0.5"></r-var>
-    <r-var name="off_y" value="0.5"></r-var>
+  <r-var name="off_x" value="0.5"></r-var>
+  <r-var name="off_y" value="0.5"></r-var>
 
-    <strong>$A$:</strong><r-dynamic bind="a" min="-3" max="3" step="0.25"></r-dynamic><br>
-    <strong>$B$:</strong><r-dynamic bind="a" min="-3" max="3" step="0.25"></r-dynamic><br>
-    <strong>$x$:</strong><r-dynamic bind="off_x" min="-1" max="1" step="0.1"></r-dynamic><br>
-    <strong>$y$:</strong><r-dynamic bind="off_y" min="-1" max="1" step="0.1"></r-dynamic><br>
+  <strong>$A$:</strong><r-dynamic bind="a" min="-3" max="3" step="0.25"></r-dynamic><br>
+  <strong>$B$:</strong><r-dynamic bind="a" min="-3" max="3" step="0.25"></r-dynamic><br>
+  <strong>$x$:</strong><r-dynamic bind="off_x" min="-1" max="1" step="0.1"></r-dynamic><br>
+  <strong>$y$:</strong><r-dynamic bind="off_y" min="-1" max="1" step="0.1"></r-dynamic><br>
 
-    <r-demo>
-      <r-svg-chart xlim="[-3, 3]" ylim="[-3, 3]">
-        <r-svg-text :x="a" :y="b" text="(a, b)"></r-svg-text>
-        <r-svg-text :x="a + off_x" :y="b + off_y" text="(a + x, b + y)"></r-svg-text>
-        <r-svg-node :x="a" :y="b" :drag="{a: x, b: y}"></r-svg-node>
-        <r-svg-node :x="a + off_x" :y="b + off_y" :drag="{off_x: x - a, off_y: y - b}"></r-svg-node>
-      </r-svg-chart>
-    </r-demo>
-
+  <r-demo>
+    <r-svg-chart xlim="[-3, 3]" ylim="[-3, 3]">
+      <r-svg-text :x="a" :y="b" text="(a, b)"></r-svg-text>
+      <r-svg-text :x="a + off_x" :y="b + off_y" text="(a + x, b + y)"></r-svg-text>
+      <r-svg-node :x="a" :y="b" :drag="{a: x, b: y}"></r-svg-node>
+      <r-svg-node :x="a + off_x" :y="b + off_y" :drag="{off_x: x - a, off_y: y - b}"></r-svg-node>
+    </r-svg-chart>
+  </r-demo>
 </r-scope>
 
 <r-scope name="addWaves">
-    <h2>Example - Adding Sin and Cos</h2>
+  <h2>Example - Adding Sin and Cos</h2>
 
-    <r-var name="amplitude1" value="1"></r-var>
-    <r-var name="freq1" value="1"></r-var>
-    <r-var name="phase1" value="0"></r-var>
+  <r-var name="amplitude1" value="1"></r-var>
+  <r-var name="freq1" value="1"></r-var>
+  <r-var name="phase1" value="0"></r-var>
 
-    <r-var name="amplitude2" value="1"></r-var>
-    <r-var name="freq2" value="1"></r-var>
-    <r-var name="phase2" value="0"></r-var>
+  <r-var name="amplitude2" value="1"></r-var>
+  <r-var name="freq2" value="1"></r-var>
+  <r-var name="phase2" value="0"></r-var>
 
-    <h2 data-outline="none">Sin</h2>
-    <strong>Amplitude, $A$:</strong><r-dynamic bind="amplitude1" min="-3" max="3" step="0.05"></r-dynamic><br>
-    <strong>Frequency, $f$:</strong><r-dynamic bind="freq1" min="0" max="6.28" step="0.05"></r-dynamic><br>
-    <strong>Phase, $\varphi$:</strong><r-dynamic bind="phase1" min="-10" max="10" step="0.05" periodic="true"></r-dynamic><br>
+  <h2 data-outline="none">Sin</h2>
+  <strong>Amplitude, $A$:</strong><r-dynamic bind="amplitude1" min="-3" max="3" step="0.05"></r-dynamic><br>
+  <strong>Frequency, $f$:</strong><r-dynamic bind="freq1" min="0" max="6.28" step="0.05"></r-dynamic><br>
+  <strong>Phase, $\varphi$:</strong><r-dynamic bind="phase1" min="-10" max="10" step="0.05" periodic="true"></r-dynamic><br>
 
 
-    <h2 data-outline="none">Cos</h2>
-    <strong>Amplitude, $A$:</strong><r-dynamic bind="amplitude2" min="-3" max="3" step="0.05"></r-dynamic><br>
-    <strong>Frequency, $f$:</strong><r-dynamic bind="freq2" min="0" max="6.28" step="0.05"></r-dynamic><br>
-    <strong>Phase, $\varphi$:</strong><r-dynamic bind="phase2" min="-10" max="10" step="0.05" periodic="true"></r-dynamic><br>
+  <h2 data-outline="none">Cos</h2>
+  <strong>Amplitude, $A$:</strong><r-dynamic bind="amplitude2" min="-3" max="3" step="0.05"></r-dynamic><br>
+  <strong>Frequency, $f$:</strong><r-dynamic bind="freq2" min="0" max="6.28" step="0.05"></r-dynamic><br>
+  <strong>Phase, $\varphi$:</strong><r-dynamic bind="phase2" min="-10" max="10" step="0.05" periodic="true"></r-dynamic><br>
 
-    <r-equation>
-        y(t) = A \sin(2 \pi f t - \varphi)
-    </r-equation>
+  <r-equation>
+    y(t) = A \sin(2 \pi f t - \varphi)
+  </r-equation>
 
-    <r-svg-chart :xlim="[0, 10]" ylim="[-6, 6]" xlabel="t" ylabel="f(t)">
-        <r-svg-eqn eqn="amplitude1 * Math.sin(2 * Math.PI * freq1 * x - phase1)" :listen="[amplitude1, amplitude2, freq1, freq2, phase1, phase2]"></r-svg-eqn>
-        <r-svg-eqn eqn="amplitude2 * Math.cos(2 * Math.PI * freq2 * x - phase2)"></r-svg-eqn>
-        <r-svg-eqn eqn="amplitude1 * Math.sin(2 * Math.PI * freq1 * x - phase1) + amplitude2 * Math.cos(2 * Math.PI * freq2 * x - phase2)" stroke-width="2.5"></r-svg-eqn>
-    </r-svg-chart>
+  <r-svg-chart :xlim="[0, 10]" ylim="[-6, 6]" xlabel="t" ylabel="f(t)">
+    <r-svg-eqn eqn="amplitude1 * Math.sin(2 * Math.PI * freq1 * x - phase1)" :listen="[amplitude1, amplitude2, freq1, freq2, phase1, phase2]"></r-svg-eqn>
+    <r-svg-eqn eqn="amplitude2 * Math.cos(2 * Math.PI * freq2 * x - phase2)"></r-svg-eqn>
+    <r-svg-eqn eqn="amplitude1 * Math.sin(2 * Math.PI * freq1 * x - phase1) + amplitude2 * Math.cos(2 * Math.PI * freq2 * x - phase2)" stroke-width="2.5"></r-svg-eqn>
+  </r-svg-chart>
 </r-scope>
 
 {% endblock%}
