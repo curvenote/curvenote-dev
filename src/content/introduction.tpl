@@ -8,12 +8,14 @@
     documents is hard enough already, and choosing to make that writing <em>interactive</em> is beyond the reach of most
     communicators - who often have limited or no development experience.
   </p>
-  <p>Providing multiple visuals of images, text, and equations that are all interconnected allows your readers to
+  <p>
+    Providing multiple visuals of images, text, and equations that are all interconnected allows your readers to
     interrogate models, build intuition and <em>play</em> with ideas. Not every explanation is best suited to be augmented
     with interactive content, however, not every explanation is best represented by paper, or the computer simulated
     version: the PDF.
   </p>
-  <p>We are working on <a href="https://iooxa.com">an editor and publishing platform</a> to try to lower the barriers
+  <p>
+    We are working on <a href="https://iooxa.com">an editor and publishing platform</a> to try to lower the barriers
     around creating reactive documents and are committed to the core of these documents being open source, so you can take
     your documents anywhere. <code>iooxa.dev</code> is a collection of open source tools and packages that aim to lower
     the barrier to interactive scientific writing.
@@ -139,7 +141,7 @@
 
 <aside>
   <p>
-    For more information on why we choose web-components,
+    For more information on why we chose web-components,
     and how this works with other frameworks (it does!), check out our blog.
   </p>
 </aside>
@@ -162,7 +164,7 @@
     <p>
       We know this is still a little hard, which is why we are working on an editor to make writing very easy!!
       <img src="/images/var-editor.gif" style="border: 1px solid #333;"><br>
-      Sign up for our <a href="https://eepurl.com/gSTYyv" target="_blank">mailing list</a> to learn more!
+      Sign up for our <a href="{{ site.mailchimp }}" target="_blank">mailing list</a> to learn more!
     </p>
   </aside>
   <p>
@@ -212,10 +214,10 @@
   <aside>
     <r-var name="m" value="1"></r-var>
     <r-var name="b" value="1"></r-var>
-    <p>$m$ = <r-range bind="m" step="0.1" min="-10" max="10"></r-range>
+    <p>$m$ = <r-range bind="m" min="-10" max="10"></r-range>
       <r-display bind="m"></r-display>
     </p>
-    <p>$b$ = <r-range bind="b" step="0.1" min="-10" max="10"></r-range>
+    <p>$b$ = <r-range bind="b" min="-10" max="10"></r-range>
       <r-display bind="b"></r-display>
     </p>
     <r-equation aligned>
@@ -256,16 +258,5 @@
   <a href="https://github.com/iooxa/article/blob/master/LICENSE">MIT License</a>
   to make it easy for you to use these packages with your other projects!
 </p>
-<p>
-  We are excited to see what you create, and hope that these tools help you in creating interactive articles
-  and beautiful explorable explanations.
-  If you have issues let us know <a href="https://github.com/iooxa/article/issues">on GitHub</a> or drop
-  us a link to some of your work at <a href="mailto:hello@iooxa.dev">hello@iooxa.dev</a>.
-  Looking forward to hearing from you! 🚀
-</p>
-<p>
-  If you are interested in hearing more about iooxa, including our product,
-  please sign up for our <a href="https://eepurl.com/gSTYyv" target="_blank">mailing list</a> or
-  follow us <a href="https://twitter.com/_iooxa" target="_blank">on twitter</a>.
-</p>
+{% include 'content/introduction-snippet.tpl' %}
 {% endblock%}

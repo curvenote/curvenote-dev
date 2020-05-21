@@ -13,8 +13,7 @@
 </aside>
 
 <p>
-  You can also download the <a href="https://github.com/iooxa/article/releases"
-    target="_blank">latest release</a> from GitHub.
+  You can also download the <a href="https://github.com/iooxa/article/releases" target="_blank">latest release</a> from GitHub.
   If you are running this <em>without</em> a web server, ensure the script has <code>charset="utf-8"</code> in
   the script tag.
   You can also install from npm:

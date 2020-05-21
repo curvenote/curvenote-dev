@@ -73,4 +73,6 @@
 
 <hr>
 {% include 'content/getting-started-snippet.tpl' %}
+<hr>
+{% include 'content/introduction-snippet.tpl' %}
 {% endblock %}

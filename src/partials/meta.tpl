@@ -24,5 +24,5 @@
   <meta property="og:description" content="{{ page.description }}" />
   <meta property="og:site_name" content="{{ site.name }}" />
 {# Article publish time #}
-  <meta property="article:published_time" content="{{ page.date }}" />
-  <meta property="article:modified_time" content="{{ page.date }}" />
+  <meta property="article:published_time" content="{{ site.dateISO }}" />
+  <meta property="article:modified_time" content="{{ site.dateISO }}" />

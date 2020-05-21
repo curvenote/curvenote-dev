@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const moment = require('moment');
 const nunjucks = require('nunjucks');
 require = require('esm')(module /*, options*/);
 const jsdom = require("jsdom");
@@ -22,10 +23,13 @@ const site = {
   name: 'iooxa.dev',
   twitter: '_iooxa',
   github: 'iooxa',
+  mailchimp: 'https://eepurl.com/gSTYyv',
   googleAnalyticsKey: 'G-4P4Z3X7QKB',
   theme: '#EE9127',
   logo: '/images/logo.png',
   icon: '/images/icon.png',
+  date: moment().format('MMMM Do, YYYY'),
+  dateISO: moment().toISOString(),
 }
 
 const nav = {

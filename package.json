@@ -23,6 +23,7 @@
     "@iooxa/components": "^0.2.4",
     "esm": "^3.2.25",
     "jsdom": "^16.2.2",
+    "moment": "^2.24.0",
     "nunjucks": "^3.2.1"
   }
 }
