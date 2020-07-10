@@ -8,11 +8,7 @@
     <r-range bind="a"></r-range> <r-display bind="a"></r-display>
   </p>
 </r-demo>
-
-<aside class="callout danger">
-  <p><strong>Note:</strong> The material component range is broken with min/max setting, so we have a fallback to a simple input range for now. </p>
-</aside>
-
+<p>The following demo shows the min of one slider hooked up to the max of another!</p>
 <r-demo>
   <r-var name="x" value="10"></r-var>
   <r-var name="y" value="150"></r-var>
