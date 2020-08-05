@@ -7,6 +7,7 @@
     "copy": "cp ../article/dist/iooxa.min.js public/js/iooxa.min.js; cp ../article/dist/iooxa.css public/css/iooxa.css",
     "serve": "firebase serve",
     "build": "node src/index.js",
+    "build:watch": "nodemon",
     "deploy": "firebase deploy --only 'hosting'"
   },
   "repository": {
@@ -25,5 +26,19 @@
     "jsdom": "^16.2.2",
     "moment": "^2.24.0",
     "nunjucks": "^3.2.1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "yarn build",
+    "ext": "js,tpl",
+    "delay": "100"
   }
 }
