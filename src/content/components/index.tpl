@@ -170,7 +170,7 @@
   </r-code>
   <p>
     When the variable <code>x</code> updates, the <code>value</code> is set, and when the control sends a <code>change</code> event,
-    the udpated value is set to the variable <code>x</code>!
+    the updated value is set to the variable <code>x</code>!
     Under the hood, when the <code>bind</code> attribute is defined, the <code>:value</code> and the <em>default event</em> (e.g. <code>:change</code>) functions are
     automatically set.
   </p>
