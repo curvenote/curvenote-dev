@@ -5,7 +5,7 @@
 <p>The easiest way to get started is to put the Javascript bundle and the stylesheet directly to your page:</p>
 <r-code compact copy>
   &lt;link rel="stylesheet" href="https://unpkg.com/@iooxa/article/dist/iooxa.css"&gt;
-  &lt;script async src="https://unpkg.com/@iooxa/article"&gt;&lt;/script&gt;
+  &lt;script src="https://unpkg.com/@iooxa/article"&gt;&lt;/script&gt;
 </r-code>
 
 <aside class="callout success">
