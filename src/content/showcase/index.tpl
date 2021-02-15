@@ -5,8 +5,8 @@
 <aside class="callout">
   <p>
     Do you have an example you would like to add?!
-    Send us a link to some of your work at <a href="mailto:hello@iooxa.dev">hello@iooxa.dev</a>
-    or add an example through <a href="https://github.com/iooxa/article" target="_blank">GitHub</a>.
+    Send us a link to some of your work at <a href="mailto:hello@curvenote.dev">hello@curvenote.dev</a>
+    or add an example through <a href="https://github.com/curvenote/article" target="_blank">GitHub</a>.
   </p>
 </aside>
 

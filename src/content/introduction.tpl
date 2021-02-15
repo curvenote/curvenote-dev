@@ -2,7 +2,7 @@
 {% block article %}
 <h1>Introduction</h1>
 <r-outline class="popout"></r-outline>
-<!-- IOOXA https://api.iooxa.com/blocks/CgfG3BXYMgMzS5Dzook2/xiNiWaRH0ogcRY4pSQIT -->
+<!-- CURVENOTE https://api.curvenote.com/blocks/CgfG3BXYMgMzS5Dzook2/xiNiWaRH0ogcRY4pSQIT -->
   <p>
     We think that creating beautiful reactive documents and explorable explanations should be easy. Writing technical
     documents is hard enough already, and choosing to make that writing <em>interactive</em> is beyond the reach of most
@@ -15,12 +15,12 @@
     version: the PDF.
   </p>
   <p>
-    We are working on <a href="https://iooxa.com">an editor and publishing platform</a> to try to lower the barriers
+    We are working on <a href="https://curvenote.com">an editor and publishing platform</a> to try to lower the barriers
     around creating reactive documents and are committed to the core of these documents being open source, so you can take
-    your documents anywhere. <code>iooxa.dev</code> is a collection of open source tools and packages that aim to lower
+    your documents anywhere. <code>curvenote.dev</code> is a collection of open source tools and packages that aim to lower
     the barrier to interactive scientific writing.
   </p>
-<!-- /IOOXA -->
+<!-- /CURVENOTE -->
 
 <hr>
 
@@ -40,7 +40,7 @@
   <r-var name="wB" value="1"></r-var>
   <r-var name="wSin" value="3"></r-var>
   <r-var name="wCos" value="3"></r-var>
-  <aside>
+  <aside class="callout">
     <p>
       To interact with this explanation, you can hover over the bolded text, or drag the node in the chart, or update $\theta$:
       <br>
@@ -124,29 +124,29 @@
 
 <h2>Overview</h2>
 
-<!-- IOOXA https://api.iooxa.com/blocks/CgfG3BXYMgMzS5Dzook2/qkL20MSIechpmsfhlUbf -->
+<!-- CURVENOTE https://api.curvenote.com/blocks/CgfG3BXYMgMzS5Dzook2/qkL20MSIechpmsfhlUbf -->
 <p>
   There are a few things going on in the above example! The example is supported by four packages:
   <ul>
-    <li><p><code>@iooxa/runtime</code> keeps track of the reactive state of the page</p></li>
-    <li><p><code>@iooxa/components</code> reactive components for text, inputs, sliders, equations, code, etc.</p></li>
-    <li><p><code>@iooxa/svg</code> reactive svg components for simple interactive diagrams</p></li>
-    <li><p><code>@iooxa/article</code> bundles together all of the above, and provides CSS layouts</p></li>
+    <li><p><code>@curvenote/runtime</code> keeps track of the reactive state of the page</p></li>
+    <li><p><code>@curvenote/components</code> reactive components for text, inputs, sliders, equations, code, etc.</p></li>
+    <li><p><code>@curvenote/svg</code> reactive svg components for simple interactive diagrams</p></li>
+    <li><p><code>@curvenote/article</code> bundles together all of the above, and provides CSS layouts</p></li>
   </ul>
 </p>
-<!-- /IOOXA -->
+<!-- /CURVENOTE -->
 
 <a href="/components" style="text-decoration: none; float: right;"><r-button outlined label="components docs"></r-button></a>
-<h3>@iooxa/components</h3>
+<h3>@curvenote/components</h3>
 
-<aside>
+<aside class="margin">
   <p>
     For more information on why we chose web-components,
     and how this works with other frameworks (it does!), check out our blog.
   </p>
 </aside>
 <p>
-  The <code>@iooxa/components</code> package provides many <strong>r</strong>eactive web-components
+  The <code>@curvenote/components</code> package provides many <strong>r</strong>eactive web-components
   that work with the <strong>r</strong>untime package (which is based on <strong>r</strong>edux).
   With so many <strong>r</strong>'s, we decided to use this p<strong>r</strong>efix to denote these <strong>r</strong>eactive components.
   For example, <code>&lt;r-var&gt;</code> creates a <strong>r</strong>eactive variable, and
@@ -160,7 +160,7 @@
       The most special number is <r-display bind="myFirstVariable"></r-display>.
     </p>
   </r-demo>
-  <aside>
+  <aside class="margin">
     <p>
       We know this is still a little hard, which is why we are working on an editor to make writing very easy!!
       <img src="/images/var-editor.gif" style="border: 1px solid #333;"><br>
@@ -179,28 +179,28 @@
 <hr>
 
 <a href="/article" style="text-decoration: none; float: right;"><r-button outlined label="article docs"></r-button></a>
-<h3>@iooxa/article</h3>
-<aside>
+<h3>@curvenote/article</h3>
+<aside class="margin">
   <p>
-    The <code>@iooxa/article</code> library also includes styles!
+    The <code>@curvenote/article</code> library also includes styles!
     So you can write in the margins, or callout important things!
   </p>
 </aside>
 <p>To get started can put this javascript and css bundle in your page:</p>
 <r-code compact copy>
-  &lt;link rel="stylesheet" href="https://unpkg.com/@iooxa/article/dist/iooxa.css"&gt;
-  &lt;script async src="https://unpkg.com/@iooxa/article"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" href="https://unpkg.com/@curvenote/article/dist/curvenote.css"&gt;
+  &lt;script async src="https://unpkg.com/@curvenote/article"&gt;&lt;/script&gt;
 </r-code>
 
 <p>
-  You can also download the <a href="https://github.com/iooxa/article/releases" target="_blank">latest release</a> from GitHub.
+  You can also download the <a href="https://github.com/curvenote/article/releases" target="_blank">latest release</a> from GitHub.
   If you are running this <emph>without</emph> a web server, ensure the script has <code>charset="utf-8"</code> in
   the script tag.
 </p>
 
 
 <a href="/svg" style="text-decoration: none; float: right;"><r-button outlined label="svg docs"></r-button></a>
-<h3>@iooxa/svg</h3>
+<h3>@curvenote/svg</h3>
 
 <p>
   The <code>svg</code> package provides a light wrapper on some commonly used <code>&lt;svg&gt;</code>
@@ -211,7 +211,7 @@
 </p>
 
 <r-scope name="ymxb">
-  <aside>
+  <aside class="margin">
     <r-var name="m" value="1"></r-var>
     <r-var name="b" value="1"></r-var>
     <p>$m$ = <r-range bind="m" min="-10" max="10"></r-range>
@@ -242,10 +242,10 @@
 </r-scope>
 
 <a href="/runtime" style="text-decoration: none; float: right;"><r-button outlined label="runtime docs"></r-button></a>
-<h3>@iooxa/runtime</h3>
+<h3>@curvenote/runtime</h3>
 
 <p>
-  The <code>@iooxa/runtime</code> library allows you to create variables and components that react to changes in state through
+  The <code>@curvenote/runtime</code> library allows you to create variables and components that react to changes in state through
   <strong>user-defined</strong> functions. The runtime is a small component that can be used in other packages
   to keep the state of a document reactive. It has <strong>no user interface</strong>.
   The package is based on <a href="https://redux.js.org/" target="_blank">Redux</a> which is compatible with many popular
@@ -255,7 +255,7 @@
 <h2>License and Contact</h2>
 <p>
   Everything is distributed under the permissive
-  <a href="https://github.com/iooxa/article/blob/master/LICENSE">MIT License</a>
+  <a href="https://github.com/curvenote/article/blob/master/LICENSE">MIT License</a>
   to make it easy for you to use these packages with your other projects!
 </p>
 {% include 'content/introduction-snippet.tpl' %}

@@ -1,6 +1,6 @@
 {% extends "layout/article.tpl" %}
 {% block article %}
-<h1>@iooxa/runtime</h1>
+<h1>@curvenote/runtime</h1>
 <r-outline class="popout"></r-outline>
 <p>
   The <code>runtime</code> package allows you to create variables and components that react to changes in state through
@@ -10,18 +10,18 @@
     href="https://vuejs.org/">Vue</a>, etc.).
 </p>
 <h2>Getting Started</h2>
-<p>This package is not setup directly for use in a browser, please see the <a href="/components">@iooxa/components</a> package to see it in use. For use in
+<p>This package is not setup directly for use in a browser, please see the <a href="/components">@curvenote/components</a> package to see it in use. For use in
   other packages, node, etc. you can download the
-  <a href="https://www.npmjs.com/package/@iooxa/runtime">latest release from npm</a>:
+  <a href="https://www.npmjs.com/package/@curvenote/runtime">latest release from npm</a>:
 </p>
 <r-code language="bash">
-  &gt;&gt; npm install @iooxa/runtime
+  &gt;&gt; npm install @curvenote/runtime
 </r-code>
 <p>You should then be able to extend/integrate the <code>runtime</code> as you see fit:</p>
 <r-code language="javascript">
   import { createStore, applyMiddleware, combineReducers } from 'redux';
   import thunkMiddleware from 'redux-thunk';
-  import runtime, { actions, reducer } from '@iooxa/runtime';
+  import runtime, { actions, reducer } from '@curvenote/runtime';
 
   // Create a store
   const store = createStore(

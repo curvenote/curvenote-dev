@@ -8,21 +8,22 @@ const { JSDOM } = jsdom;
 const dom = (new JSDOM(``));
 global.window = dom.window;
 global.HTMLElement = dom.window.HTMLElement;
+global.Element = dom.window.Element;
 global.Document = dom.window.Document;
 global.document = dom.window.document;
 global.JSCompiler_renameProperty = function JSCopmiler_renameProperty(a, b) { return a };
 global.navigator = dom.window.navigator;
-const components = require('@iooxa/components').default;
+const components = require('@curvenote/components').default;
 
 
 const env = nunjucks.configure('src', { trimBlocks: true });
 
 
 const site = {
-  url: 'https://iooxa.dev',
-  name: 'iooxa.dev',
-  twitter: '_iooxa',
-  github: 'iooxa',
+  url: 'https://curvenote.dev',
+  name: 'curvenote.dev',
+  twitter: 'curvenote',
+  github: 'curvenote',
   mailchimp: 'https://eepurl.com/gSTYyv',
   googleAnalyticsKey: 'G-4P4Z3X7QKB',
   theme: '#EE9127',
@@ -36,7 +37,7 @@ const nav = {
   type: "nav",
   label: "Documentation",
   children: [
-    { url: "/", label: "iooxa.dev" },
+    { url: "/", label: "curvenote.dev" },
     { url: "/introduction", label: "Introduction" },
     { url: "/getting-started", label: "Getting Started" },
     {
@@ -156,7 +157,7 @@ writePage({
   tpl: 'content/index.tpl',
   file: 'index.html',
   title: 'Interactive Scientific Writing',
-  description: 'iooxa.dev: open source tools to promote and enable interactive scientific writing and explorable explanations',
+  description: 'curvenote.dev: open source tools to promote and enable interactive scientific writing and explorable explanations',
   thumbnail: '/images/tangle.png',
   ...basePage,
   centered: true,
@@ -167,7 +168,7 @@ writePage({
   tpl: 'content/introduction.tpl',
   file: 'introduction.html',
   title: 'Introduction',
-  description: 'Create beautiful reactive documents and explorable explanations using @iooxa/article',
+  description: 'Create beautiful reactive documents and explorable explanations using @curvenote/article',
   thumbnail: '/images/tangle.png',
   ...basePage,
 });
@@ -187,8 +188,8 @@ writePage({
   url: '/components',
   tpl: 'content/components/index.tpl',
   file: 'components/index.html',
-  title: '@iooxa/components',
-  description: 'Use @iooxa/components to build explorable explanations',
+  title: '@curvenote/components',
+  description: 'Use @curvenote/components to build explorable explanations',
   thumbnail: '/images/components.gif',
   ...basePage,
 });
@@ -198,7 +199,7 @@ writePage({
   tpl: 'content/components/overview.tpl',
   file: 'components/overview.html',
   title: 'Component Overview',
-  description: 'Visual overview of @iooxa/components',
+  description: 'Visual overview of @curvenote/components',
   thumbnail: '/images/components.gif',
   ...basePage,
   centered: true,
@@ -356,8 +357,8 @@ writePage({
     url: '/article',
     tpl: 'content/article/index.tpl',
     file: 'article/index.html',
-    title: '@iooxa/article',
-    description: 'Use @iooxa/article to build explorable explanations',
+    title: '@curvenote/article',
+    description: 'Use @curvenote/article to build explorable explanations',
     thumbnail: '/images/components/visible.gif',
     ...basePage,
   });
@@ -366,7 +367,7 @@ writePage({
     url: '/article/aside',
     tpl: 'content/article/aside.tpl',
     file: 'article/aside.html',
-    title: '@iooxa/article Visual Overview',
+    title: '@curvenote/article Visual Overview',
     description: 'Visual aside of article components and layout',
     thumbnail: '/images/article/aside.png',
     ...basePage,
@@ -438,8 +439,8 @@ writePage({
   url: '/svg',
   tpl: 'content/svg/index.tpl',
   file: 'svg/index.html',
-  title: '@iooxa/svg',
-  description: 'Create diagrams and reactive svgs in iooxa',
+  title: '@curvenote/svg',
+  description: 'Create diagrams and reactive svgs in curvenote',
   thumbnail: '/images/svg/radius.png',
   ...basePage,
   centered: true,
@@ -450,8 +451,8 @@ writePage({
   url: '/runtime',
   tpl: 'content/runtime/index.tpl',
   file: 'runtime/index.html',
-  title: '@iooxa/runtime',
-  description: 'Introduction to the @iooxa/runtime package',
+  title: '@curvenote/runtime',
+  description: 'Introduction to the @curvenote/runtime package',
   thumbnail: '/images/tangle.png',
   ...basePage,
   centered: true,
@@ -505,7 +506,7 @@ writePage({
   tpl: 'content/showcase/index.tpl',
   file: 'showcase/index.html',
   title: 'Showcase',
-  description: 'Examples of using iooxa.dev',
+  description: 'Examples of using curvenote.dev',
   thumbnail: '/images/showcase/unit-circle.gif',
   ...basePage,
   centered: true,

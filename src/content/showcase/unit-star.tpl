@@ -118,5 +118,5 @@
   <r-svg-node :x="uX" :y="uY" :visible="draw" fill="purple" :drag="setPath(x,y)" :dragging="{drawing: value}"></r-svg-node>
   <r-svg-circle :visible="!drawing && draw" :x="xC" :y="yC" fill="black"></r-svg-circle>
 </r-svg-chart>
-<aside><p>There is a joke in here somewhere about finding your <strong>star sign</strong> 🦂 ... !</p></aside>
+<aside class="margin"><p>There is a joke in here somewhere about finding your <strong>star sign</strong> 🦂 ... !</p></aside>
 {% endblock%}

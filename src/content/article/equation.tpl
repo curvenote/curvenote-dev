@@ -23,7 +23,7 @@
   To dynamically update the equation there are two ways: (1) you can as usual set the <code>:math</code> property; or (2) you can use the equation in conjunction with <code>r-display</code> and <code>r-visible</code>.
   In the example below we are expanding a Taylor Series which uses the <code>:math</code> property to index into an array when you drag a range.
 </p>
-<aside>
+<aside class="margin">
   <p>
     See the <a href="/showcase/taylor-series">Taylor series example.</a>
   </p>
@@ -60,7 +60,7 @@
   </p>
   <r-var name="m" value="1"></r-var>
   <r-var name="b" value="1"></r-var>
-  <aside>
+  <aside class="margin">
     <r-svg-chart width="250" height="250" x-axis-location="origin" y-axis-location="origin" xlim="[-10,10]" ylim="[-10,10]">
       <r-svg-eqn eqn="m*x + b" :listen="[m, b]"></r-svg-eqn>
       <r-svg-eqn eqn="m/10*x**2 + b" :listen="[m, b]"></r-svg-eqn>
