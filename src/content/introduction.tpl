@@ -189,7 +189,7 @@
 <p>To get started can put this javascript and css bundle in your page:</p>
 <r-code compact copy>
   &lt;link rel="stylesheet" href="https://unpkg.com/@curvenote/article/dist/curvenote.css"&gt;
-  &lt;script async src="https://unpkg.com/@curvenote/article"&gt;&lt;/script&gt;
+  &lt;script src="https://unpkg.com/@curvenote/article"&gt;&lt;/script&gt;
 </r-code>
 
 <p>
