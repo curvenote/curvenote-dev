@@ -5,7 +5,7 @@
 <r-var name="b" value="3"></r-var>
 <r-var name="r" :value="Math.sqrt(a*a + b*b)"></r-var>
 
-<aside>
+<aside class="margin">
   <r-svg-chart xlim="[-5, 5]" ylim="[-5, 5]" height="300" width="300" x-axis-location="origin" y-axis-location="origin">
     <r-svg-eqn :domain="[0, Math.atan2(b, a)]" eqn="[r * Math.cos(t), r * Math.sin(t)]" parameterize="t" stroke="#333" stroke-width="1" stroke-dasharray="3"></r-svg-eqn>
     <r-svg-path :data="[[0, 0],[r * Math.cos(Math.atan2(b, a)), r * Math.sin(Math.atan2(b, a))]]" stroke="#333" stroke-width="1" stroke-dasharray="3"></r-svg-path>
@@ -30,7 +30,7 @@
   \theta &= \operatorname{atan2}(y,x) = <r-display :value="Math.atan2(b, a) * 180 / Math.PI"></r-display>
 </r-equation>
 
-<aside>
+<aside class="margin">
   <p>
     <strong>$\theta$: </strong><r-dynamic :value="Math.atan2(b, a) * 180 / Math.PI" :change="{
         a: r * Math.cos(value * Math.PI / 180),

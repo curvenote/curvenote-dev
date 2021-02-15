@@ -1,9 +1,9 @@
 {% extends "layout/article.tpl" %}
 {% block article %}
-<h1>iooxa.dev</h1>
+<h1>curvenote.dev</h1>
 <r-outline class="popout"></r-outline>
 <p>
-  The goal of <code>iooxa.dev</code> is to provide open source tools to promote and enable
+  The goal of <code>curvenote.dev</code> is to provide open source tools to promote and enable
   interactive scientific writing, reactive documents and <a href="https://explorabl.es/" target="_blank">explorable explanations</a>.
 </p>
 
@@ -14,7 +14,7 @@
   <p>
     Our work is inspired by <a href="http://worrydream.com/Tangle/guide.html" target="_blank">tangle.js</a>
     and <a href="https://explorabl.es/" target="_blank">explorable explanations</a>.
-    <code>@iooxa/article</code> exposes reactive web-components so you can declaratively write
+    <code>@curvenote/article</code> exposes reactive web-components so you can declaratively write
     your variables and how to display them in <code>html</code> markup.
     To get an idea of what that looks like, let's take the canonical example of <em>Tangled Cookies</em> - a simple
     reactive document to encourage you to not eat more than
@@ -68,7 +68,7 @@
   <r-card title="Article" description="Equations, layout and more" img-src="/images/components/visible.gif" url="/article" contain></r-card>
   <r-card title="SVG" description="Charts and reactive SVGs" img-src="/images/svg/eqn.gif" url="/svg" contain></r-card>
   <r-card title="Runtime" description="Reactive redux runtime" img-src="/images/runtime.png" url="/runtime" contain></r-card>
-  <r-card title="Showcase" description="Examples of iooxa in action" img-src="/images/showcase/unit-star.gif" url="/showcase" contain></r-card>
+  <r-card title="Showcase" description="Examples of curvenote in action" img-src="/images/showcase/unit-star.gif" url="/showcase" contain></r-card>
 </div>
 
 <hr>

@@ -1,10 +1,10 @@
 {% extends "layout/article.tpl" %}
 {% block article %}
-<h1>@iooxa/components</h1>
+<h1>@curvenote/components</h1>
 <r-outline class="popout"></r-outline>
 <h2>Introduction</h2>
 <p>
-  The <code>@iooxa/components</code> package comes with a number of web-components for interative scientific writing.
+  The <code>@curvenote/components</code> package comes with a number of web-components for interative scientific writing.
   Variables need to be defined to drive your dynamic document, the <code>r-var</code> web component
   can specify a <code>name</code> and a <code>value</code> as attributes.
   In the following example, we will create reactive variables for $x$ and $y$ and then control them with
@@ -50,7 +50,7 @@
     These variables are hidden in the <code>DOM</code> by default, you can change the styles globally or
     by changing the style to include <code>display: block</code>.
   </p>
-  <aside>
+  <aside class="margin">
     <r-switch :value="show" :change="toggleVarVisible(value)" label="Show Variables"></r-switch>
   </aside>
 
@@ -107,7 +107,7 @@
 
   <h2>Controlling Variables</h2>
 
-  <aside>
+  <aside class="margin">
     <p>You can also control variables through diagrams and other custom components!!</p>
     <r-var name="cX" :value="Math.min(Math.max(x, 0), 10)"></r-var>
     <r-var name="cY" :value="Math.min(Math.max(y, 0), 10)"></r-var>
@@ -139,7 +139,7 @@
     includes an <code>after="ºC"</code> attributes.
   </p>
   <r-code language="html" compact>&lt;r-dynamic bind="y" after="ºC"&gt;&lt;/r-dynamic&gt;</r-code>
-  <aside>
+  <aside class="margin">
     <p>Here the final range has a <code>max</code> of 10, while the other two ranges have a <code>max</code> of 5!</p>
     <p>
       $x_{5} :$ <r-range style="margin: 15px;" bind="x" max="5"></r-range>
@@ -174,7 +174,7 @@
     Under the hood, when the <code>bind</code> attribute is defined, the <code>:value</code> and the <em>default event</em> (e.g. <code>:change</code>) functions are
     automatically set.
   </p>
-  <aside><p>The <code>bind</code> function also copies over the <code>format</code>, which means you can define the format string once!</p></aside>
+  <aside class="margin"><p>The <code>bind</code> function also copies over the <code>format</code>, which means you can define the format string once!</p></aside>
 
   <r-code language="html">
     &lt;r-dynamic
@@ -207,7 +207,7 @@
       return { "phase": x, "amplitude": y / 300 };
     }
   </r-code>
-  <aside>
+  <aside class="margin">
     <p>
       For example, check out <a href="/showcase/coordinate-transform">changing between radial and cartiesian coordinates</a> in the showcase.
     </p>
@@ -267,7 +267,7 @@
 
 <p>You can also update variables in other scopes:</p>
 <r-scope name="moon">
-  <aside>
+  <aside class="margin">
     <p>
       That means you can also play with the phases of the emoji-moon:<br>
       <span style="font-size: xx-large;">
@@ -288,7 +288,7 @@
 </r-demo>
 
 <p>
-  That's it for an overview of using <code>@iooxa/components</code>, next up, is
+  That's it for an overview of using <code>@curvenote/components</code>, next up, is
   seeing the components that you have available to you out of the box!
 </p>
 

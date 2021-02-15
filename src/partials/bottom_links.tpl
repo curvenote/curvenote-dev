@@ -9,7 +9,7 @@
 </a>
 {% endif %}
 <p style="clear:both; text-align: center; color: #AAA; padding-top: 50px;">
-  Made with love by <a href="https://iooxa.com" style="color: #AAA;"><img src="/images/icon.png" style="height: 1em;"> iooxa</a>
+  Made with love by <a href="https://curvenote.com" style="color: #AAA;"><img src="/images/icon.png" style="height: 1em;"> Curvenote</a>
   <br>
   <span style="font-size: smaller;">Last updated {{ site.date }}</span>
 </p>

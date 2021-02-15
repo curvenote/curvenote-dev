@@ -65,5 +65,5 @@ node_modules/
 .env
 
 public/**/*.html
-public/css/iooxa.css
-public/js/iooxa.min.js
+public/css/curvenote.css
+public/js/curvenote.min.js

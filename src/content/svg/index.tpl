@@ -1,6 +1,6 @@
 {% extends "layout/article.tpl" %}
 {% block article %}
-<h1>@iooxa/svg</h1>
+<h1>@curvenote/svg</h1>
 <r-outline class="popout"></r-outline>
 
 <p>To create an svg diagram or simple chart, use the <code>&lt;r-svg-chart&gt;</code> component and add a few children to see the plotting of equations, lines and points.</p>

@@ -1,10 +1,10 @@
 {% extends "layout/article.tpl" %}
 {% block article %}
-<h1>@iooxa/article</h1>
+<h1>@curvenote/article</h1>
 <r-outline class="popout"></r-outline>
 <h2>Introduction</h2>
 <p>
-  The <code>@iooxa/article</code> is bundled with web-components and a CSS framework
+  The <code>@curvenote/article</code> is bundled with web-components and a CSS framework
   that helps you write interactive scientific articles.
   This documentation makes use of these components and styles.
   All components and layouts can be used by having the following structure to your HTML:
@@ -14,12 +14,12 @@
   &lt;!doctype html&gt;
   &lt;html itemscope itemtype="http://schema.org/Article"&gt;
   &lt;head&gt;
-    &lt;link rel="stylesheet" href="https://unpkg.com/@iooxa/article/dist/iooxa.css"&gt;
-    &lt;script async src="https://unpkg.com/@iooxa/article"&gt;&lt;/script&gt;
+    &lt;link rel="stylesheet" href="https://unpkg.com/@curvenote/article/dist/curvenote.css"&gt;
+    &lt;script async src="https://unpkg.com/@curvenote/article"&gt;&lt;/script&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;article&gt;
-      &lt;h1&gt;Hello Iooxa&lt;/h1&gt;
+      &lt;h1&gt;Hello Curvenote&lt;/h1&gt;
     &lt;/article&gt;
   &lt;/body&gt;
 </r-code>
@@ -40,7 +40,7 @@
   }
 </script>
 <r-var name="centered" value="false" type="Boolean"></r-var>
-<aside>
+<aside class="margin">
   <r-switch :value="centered" :change="toggleArticleCentered(value)" label="Center Article"></r-switch>
 </aside>
 
