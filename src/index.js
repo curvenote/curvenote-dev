@@ -18,6 +18,10 @@ const components = require('@curvenote/components').default;
 
 const env = nunjucks.configure('src', { trimBlocks: true });
 
+const repoArticle = { npm: '@curvenote/article', github: 'article' };
+const repoSvg = { npm: '@curvenote/svg', github: 'svg' };
+const repoComponents = { npm: '@curvenote/components', github: 'components' };
+const repoRuntime = { npm: '@curvenote/runtime', github: 'runtime' };
 
 const site = {
   url: 'https://curvenote.dev',
@@ -31,7 +35,10 @@ const site = {
   icon: '/images/icon.png',
   date: moment().format('MMMM Do, YYYY'),
   dateISO: moment().toISOString(),
-}
+  repo: repoArticle,
+};
+
+
 
 const nav = {
   type: "nav",
@@ -86,7 +93,7 @@ const nav = {
   ],
 };
 
-function writePage(page, data = {}) {
+function writePage(page, data = {}, siteOverrides = {}) {
   const pageNav = { ...nav, children: nav.children.map((item) => {
     if (item.type === "section") {
       const ret = {
@@ -122,7 +129,7 @@ function writePage(page, data = {}) {
     links.next = { url: links.next.children[0].url, label: links.next.label };
   }
 
-  const indexHTML = nunjucks.render(page.tpl, { site, nav: pageNav, page, links, ...data });
+  const indexHTML = nunjucks.render(page.tpl, { site: {...site, ...siteOverrides}, nav: pageNav, page, links, ...data });
 
   const loc = path.join(__dirname, '..', 'public', page.file);
 
@@ -192,7 +199,7 @@ writePage({
   description: 'Use @curvenote/components to build explorable explanations',
   thumbnail: '/images/components.gif',
   ...basePage,
-});
+}, {}, {repo: repoComponents});
 
 writePage({
   url: '/components/overview',
@@ -203,7 +210,7 @@ writePage({
   thumbnail: '/images/components.gif',
   ...basePage,
   centered: true,
-});
+}, {}, { repo: repoComponents });
 
 
 { // Components
@@ -216,7 +223,7 @@ writePage({
     thumbnail: '/images/components/var.png',
     ...basePage,
     centered: true,
-  }, { spec: convertSpec(components.Variable) });
+  }, { spec: convertSpec(components.Variable) }, { repo: repoComponents });
 
 
   writePage({
@@ -228,7 +235,7 @@ writePage({
     thumbnail: '/images/components/display.gif',
     ...basePage,
     centered: true,
-  }, { spec: convertSpec(components.Display) });
+  }, { spec: convertSpec(components.Display) }, { repo: repoComponents });
 
 
   writePage({
@@ -240,7 +247,7 @@ writePage({
     thumbnail: '/images/components/dynamic.gif',
     ...basePage,
     centered: true,
-  }, { spec: convertSpec(components.Dynamic) });
+  }, { spec: convertSpec(components.Dynamic) }, { repo: repoComponents });
 
 
   writePage({
@@ -252,7 +259,7 @@ writePage({
     thumbnail: '/images/components/range.gif',
     ...basePage,
     centered: true,
-  }, { spec: convertSpec(components.Range) });
+  }, { spec: convertSpec(components.Range) }, { repo: repoComponents });
 
 
   writePage({
@@ -264,7 +271,7 @@ writePage({
     thumbnail: '/images/components/action.gif',
     ...basePage,
     centered: true,
-  }, { spec: convertSpec(components.Action) });
+  }, { spec: convertSpec(components.Action) }, { repo: repoComponents });
 
 
   writePage({
@@ -276,7 +283,7 @@ writePage({
     thumbnail: '/images/components/button.gif',
     ...basePage,
     centered: true,
-  }, { spec: convertSpec(components.Button) });
+  }, { spec: convertSpec(components.Button) }, { repo: repoComponents });
 
 
   writePage({
@@ -288,7 +295,7 @@ writePage({
     thumbnail: '/images/components/switch.gif',
     ...basePage,
     centered: true,
-  }, { spec: convertSpec(components.Switch) });
+  }, { spec: convertSpec(components.Switch) }, { repo: repoComponents });
 
 
   writePage({
@@ -300,7 +307,7 @@ writePage({
     thumbnail: '/images/components/checkbox.gif',
     ...basePage,
     centered: true,
-  }, { spec: convertSpec(components.Checkbox) });
+  }, { spec: convertSpec(components.Checkbox) }, { repo: repoComponents });
 
 
   writePage({
@@ -312,7 +319,7 @@ writePage({
     thumbnail: '/images/components/radio.gif',
     ...basePage,
     centered: true,
-  }, { spec: convertSpec(components.Radio) });
+  }, { spec: convertSpec(components.Radio) }, { repo: repoComponents });
 
 
   writePage({
@@ -324,7 +331,7 @@ writePage({
     thumbnail: '/images/components/select.gif',
     ...basePage,
     centered: true,
-  }, { spec: convertSpec(components.Select) });
+  }, { spec: convertSpec(components.Select) }, { repo: repoComponents });
 
 
   writePage({
@@ -336,7 +343,7 @@ writePage({
     thumbnail: '/images/components/input.gif',
     ...basePage,
     centered: true,
-  }, { spec: convertSpec(components.Input) });
+  }, { spec: convertSpec(components.Input) }, { repo: repoComponents });
 
 
   writePage({
@@ -348,7 +355,7 @@ writePage({
     thumbnail: '/images/components/visible.gif',
     ...basePage,
     centered: true,
-  }, { spec: convertSpec(components.Visible) });
+  }, { spec: convertSpec(components.Visible) }, { repo: repoComponents });
 }
 
 
@@ -361,7 +368,7 @@ writePage({
     description: 'Use @curvenote/article to build explorable explanations',
     thumbnail: '/images/components/visible.gif',
     ...basePage,
-  });
+  }, {}, { repo: repoArticle });
 
   writePage({
     url: '/article/aside',
@@ -372,7 +379,7 @@ writePage({
     thumbnail: '/images/article/aside.png',
     ...basePage,
     centered: true,
-  });
+  }, {}, { repo: repoArticle });
   writePage({
     url: '/article/callout',
     tpl: 'content/article/callout.tpl',
@@ -382,7 +389,7 @@ writePage({
     thumbnail: '/images/article/callout.png',
     ...basePage,
     centered: true,
-  });
+  }, {}, { repo: repoArticle });
   writePage({
     url: '/article/quote',
     tpl: 'content/article/quote.tpl',
@@ -392,7 +399,7 @@ writePage({
     thumbnail: '/images/article/quote.png',
     ...basePage,
     centered: true,
-  });
+  }, {}, { repo: repoArticle });
   writePage({
     url: '/article/equation',
     tpl: 'content/article/equation.tpl',
@@ -401,7 +408,7 @@ writePage({
     description: 'Create a katex equation web-component',
     thumbnail: '/images/article/equation.png',
     ...basePage,
-  });
+  }, {}, { repo: repoArticle });
   writePage({
     url: '/article/code',
     tpl: 'content/article/code.tpl',
@@ -411,7 +418,7 @@ writePage({
     thumbnail: '/images/article/code.png',
     ...basePage,
     centered: true,
-  });
+  }, {}, { repo: repoArticle });
   writePage({
     url: '/article/demo',
     tpl: 'content/article/demo.tpl',
@@ -421,7 +428,7 @@ writePage({
     thumbnail: '/images/article/demo.png',
     ...basePage,
     centered: true,
-  });
+  }, {}, { repo: repoArticle });
   writePage({
     url: '/article/outline',
     tpl: 'content/article/outline.tpl',
@@ -431,7 +438,7 @@ writePage({
     thumbnail: '/images/article/outline.gif',
     ...basePage,
     centered: true,
-  });
+  }, {}, { repo: repoArticle });
 }
 
 
@@ -444,7 +451,7 @@ writePage({
   thumbnail: '/images/svg/radius.png',
   ...basePage,
   centered: true,
-});
+}, {}, { repo: repoSvg });
 
 
 writePage({
@@ -456,7 +463,7 @@ writePage({
   thumbnail: '/images/tangle.png',
   ...basePage,
   centered: true,
-});
+}, {}, { repo: repoRuntime });
 
 
 const showcase = [
@@ -510,6 +517,6 @@ writePage({
   thumbnail: '/images/showcase/unit-circle.gif',
   ...basePage,
   centered: true,
-}, {showcase});
+}, { showcase });
 
 showcase.forEach((s) => writePage(s));
