@@ -40,7 +40,7 @@
   <r-var name="wB" value="1"></r-var>
   <r-var name="wSin" value="3"></r-var>
   <r-var name="wCos" value="3"></r-var>
-  <aside class="callout">
+  <aside class="margin">
     <p>
       To interact with this explanation, you can hover over the bolded text, or drag the node in the chart, or update $\theta$:
       <br>
