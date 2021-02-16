@@ -1,3 +1,4 @@
+<a href="{{ site.main }}" target="_blank" id="cta" title="{{ site.cta }}">Use Curvenote</a>
 <p style="margin: 30px calc(50% - 75px);"><a href="/"><img src="{{ site.logo }}" alt="{{ site.name }} - logo" width="150"></a></p>
 <p style="text-align:right">
   <a href="https://www.npmjs.com/package/{{ site.repo.npm }}" target="_blank" rel="nofollow"><img alt="NPM Version" src="https://img.shields.io/npm/v/{{ site.repo.npm }}.svg"></a>

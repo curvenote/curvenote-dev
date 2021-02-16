@@ -4,3 +4,16 @@ body {
   --mdc-theme-primary: #ee9127;
   --mdc-theme-secondary: #46f;
 }
+
+#cta {
+  float: right;
+  background-color: #3C5785;
+  color: white;
+  padding: 10px;
+  font-family: 'Roboto';
+}
+
+#cta:hover {
+  background-color: #2d4164;
+  text-decoration: none;
+}

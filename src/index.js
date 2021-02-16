@@ -22,8 +22,11 @@ const repoArticle = { npm: '@curvenote/article', github: 'article' };
 const repoSvg = { npm: '@curvenote/svg', github: 'svg' };
 const repoComponents = { npm: '@curvenote/components', github: 'components' };
 const repoRuntime = { npm: '@curvenote/runtime', github: 'runtime' };
+const repoEditor = { npm: '@curvenote/editor', github: 'editor' };
 
 const site = {
+  main: 'https://curvenote.com',
+  cta: 'Curvenote is a scientific writing platform that connects to Jupyter.',
   url: 'https://curvenote.dev',
   name: 'curvenote.dev',
   twitter: 'curvenote',
@@ -47,6 +50,7 @@ const nav = {
     { url: "/", label: "curvenote.dev" },
     { url: "/introduction", label: "Introduction" },
     { url: "/getting-started", label: "Getting Started" },
+    { url: "/editor", label: "Editor" },
     {
       type: "section", label: "Components", children: [
         { url: "/components", label: "Introduction" },
@@ -190,6 +194,18 @@ writePage({
   ...basePage,
   centered: true,
 });
+
+
+writePage({
+  url: '/editor',
+  tpl: 'content/editor/index.tpl',
+  file: 'editor/index.html',
+  title: '@curvenote/editor',
+  description: 'Use @curvenote/editor to build explorable explanations',
+  thumbnail: '/images/editor.gif',
+  ...basePage,
+}, {}, { repo: repoEditor });
+
 
 writePage({
   url: '/components',

@@ -7,6 +7,11 @@
   interactive scientific writing, reactive documents and <a href="https://explorabl.es/" target="_blank">explorable explanations</a>.
 </p>
 
+<aside class="callout">
+  <p>Help support our open-source work by signing up and supporting <a href="{{ site.main }}">curvenote.com</a>!</p>
+  <p><a href="{{ site.main }}">Curvenote</a> is an interactive scientific writing platform, which integrates with <a href="{{ site.main }}/for/jupyter/">Jupyter</a>.</p>
+</aside>
+
 <h2 id="tangled-cookies">Tangled Cookies</h2>
 
 <r-scope name="untangle">
