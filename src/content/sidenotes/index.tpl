@@ -3,6 +3,9 @@
 <h1>@curvenote/sidenotes</h1>
 <r-outline class="popout"></r-outline>
 <p>Position floating sidenotes/comments next to a document with inline references.</p>
+<aside class="callout">
+  <p>Checkout the <a href="https://curvenote.github.io/sidenotes/">live demo</a>!</p>
+</aside>
 <h2>Goals</h2>
 <ul>
   <li>
