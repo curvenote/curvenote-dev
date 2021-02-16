@@ -23,12 +23,15 @@ const repoSvg = { npm: '@curvenote/svg', github: 'svg' };
 const repoComponents = { npm: '@curvenote/components', github: 'components' };
 const repoRuntime = { npm: '@curvenote/runtime', github: 'runtime' };
 const repoEditor = { npm: '@curvenote/editor', github: 'editor' };
+const repoSchema = { npm: '@curvenote/schema', github: 'schema' };
+const repoSidenotes = { npm: 'sidenotes', github: 'sidenotes' };
 
 const site = {
   main: 'https://curvenote.com',
   cta: 'Curvenote is a scientific writing platform that connects to Jupyter.',
   url: 'https://curvenote.dev',
   name: 'curvenote.dev',
+  email: 'hello@curvenote.dev',
   twitter: 'curvenote',
   github: 'curvenote',
   mailchimp: 'https://eepurl.com/gSTYyv',
@@ -39,6 +42,9 @@ const site = {
   date: moment().format('MMMM Do, YYYY'),
   dateISO: moment().toISOString(),
   repo: repoArticle,
+  example: {
+    article: "https://jsbin.com/rilezam/edit?html,output",
+  },
 };
 
 
@@ -50,7 +56,13 @@ const nav = {
     { url: "/", label: "curvenote.dev" },
     { url: "/introduction", label: "Introduction" },
     { url: "/getting-started", label: "Getting Started" },
-    { url: "/editor", label: "Editor" },
+    {
+      type: "section", label: "Editor", children: [
+        { url: "/editor", label: "Overview" },
+        { url: "/schema", label: "Schema" },
+        { url: "/sidenotes", label: "Sidenotes" },
+      ],
+    },
     {
       type: "section", label: "Components", children: [
         { url: "/components", label: "Introduction" },
@@ -204,7 +216,32 @@ writePage({
   description: 'Use @curvenote/editor to build explorable explanations',
   thumbnail: '/images/editor.gif',
   ...basePage,
+  centered: true,
 }, {}, { repo: repoEditor });
+
+
+writePage({
+  url: '/schema',
+  tpl: 'content/schema/index.tpl',
+  file: 'schema/index.html',
+  title: '@curvenote/schema',
+  description: 'Use @curvenote/schema to read to/from MD and LaTeX',
+  thumbnail: '/images/schema.gif',
+  ...basePage,
+  centered: true,
+}, {}, { repo: repoSchema });
+
+
+writePage({
+  url: '/sidenotes',
+  tpl: 'content/sidenotes/index.tpl',
+  file: 'sidenotes/index.html',
+  title: '@curvenote/sidenotes',
+  description: 'Use @curvenote/sidenotes to read to/from MD and LaTeX',
+  thumbnail: '/images/sidenotes.gif',
+  ...basePage,
+  centered: true,
+}, {}, { repo: repoSidenotes });
 
 
 writePage({

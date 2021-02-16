@@ -1,5 +1,5 @@
 
-<a href="https://jsbin.com/qulahusifa/5/edit?html,output" target="_blank" style="float:right;text-decoration: none;"><r-button outlined dense label="Edit Now"></r-button></a>
+<a href="{{ site.example.article }}" target="_blank" style="float:right;text-decoration: none;"><r-button outlined dense label="Edit Now"></r-button></a>
 <h1>Getting Started</h1>
 
 <p>The easiest way to get started is to put the Javascript bundle and the stylesheet directly to your page:</p>
@@ -9,7 +9,7 @@
 </r-code>
 
 <aside class="callout success">
-<p>Try editing an <a href="https://jsbin.com/qulahusifa/5/edit?html,output" target="_blank">article on jsbin</a> without leaving your browser!</p>
+<p>Try editing an <a href="{{ site.example.article }}" target="_blank">article on jsbin</a> without leaving your browser!</p>
 </aside>
 
 <p>
