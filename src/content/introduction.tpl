@@ -162,9 +162,9 @@
   </r-demo>
   <aside class="margin">
     <p>
-      We know this is still a little hard, which is why we are working on an editor to make writing very easy!!
+      We know this is still a little hard, which is why we are working on an <a href="https://github.com/curvenote/editor">editor</a> to make writing very easy!!
       <img src="/images/var-editor.gif" style="border: 1px solid #333;"><br>
-      Sign up for our <a href="{{ site.mailchimp }}" target="_blank">mailing list</a> to learn more!
+      Sign up to <a href="{{ site.main }}" target="_blank">curvenote.com</a> to give it a try! 🚀
     </p>
   </aside>
   <p>
