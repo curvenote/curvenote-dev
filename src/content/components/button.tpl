@@ -13,10 +13,6 @@
 <h3>Attributes</h3>
 <r-demo>
   <p><r-button label="Normal"></r-button></p>
-  <p><r-button label="Raised" raised></r-button></p>
-  <p><r-button label="Outlined" outlined></r-button></p>
-  <p><r-button label="Unelevated" unelevated></r-button></p>
   <p><r-button label="Dense" dense></r-button></p>
-  <p><r-button label="Disabled" disabled="true"></r-button></p>
 </r-demo>
 {% endblock%}
